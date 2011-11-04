@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/lxfonts
+# catalog-date 2008-08-22 10:50:40 +0200
+# catalog-license lppl
+# catalog-version 0.4
 Name:		texlive-lxfonts
 Version:	0.4
 Release:	1
@@ -125,6 +131,7 @@ fonts, all redone with the same stylistic parameters.
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts-demo.tex
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts.readme
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/manifest
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -135,3 +142,5 @@ fonts, all redone with the same stylistic parameters.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
