@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The bundle contains the traditional slides fonts revised to be
@@ -27,20 +25,12 @@ they are fully integrate with the new operators, letters,
 symbols and extensible delimiter fonts, as well as with the AMS
 fonts, all redone with the same stylistic parameters.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -132,7 +122,6 @@ fonts, all redone with the same stylistic parameters.
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts-demo.tex
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts.readme
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/manifest
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -143,5 +132,3 @@ fonts, all redone with the same stylistic parameters.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
