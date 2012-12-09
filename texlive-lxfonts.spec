@@ -132,3 +132,17 @@ fonts, all redone with the same stylistic parameters.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4-2
++ Revision: 753653
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.4-1
++ Revision: 718933
+- texlive-lxfonts
+- texlive-lxfonts
+- texlive-lxfonts
+- texlive-lxfonts
+
