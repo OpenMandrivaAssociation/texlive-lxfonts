@@ -1,18 +1,19 @@
-# revision 15878
+# revision 31692
 # category Package
 # catalog-ctan /fonts/lxfonts
-# catalog-date 2008-08-22 10:50:40 +0200
+# catalog-date 2013-09-18 16:15:50 +0200
 # catalog-license lppl
-# catalog-version 0.4
+# catalog-version 2.0a
 Name:		texlive-lxfonts
-Version:	0.4
-Release:	2
+Version:	2.0a
+Release:	1
 Summary:	Set of slide fonts based on CM
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lxfonts
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.doc.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -117,32 +118,35 @@ fonts, all redone with the same stylistic parameters.
 %{_texmfdistdir}/fonts/type1/public/lxfonts/ltcli8.pfb
 %{_texmfdistdir}/fonts/type1/public/lxfonts/ltclo8.pfb
 %{_texmfdistdir}/fonts/type1/public/lxfonts/ltclq8.pfb
+%{_texmfdistdir}/tex/latex/lxfonts/lgrllcmss.fd
+%{_texmfdistdir}/tex/latex/lxfonts/lgrllcmtt.fd
 %{_texmfdistdir}/tex/latex/lxfonts/lxfonts.sty
+%{_texmfdistdir}/tex/latex/lxfonts/omlllcmm.fd
+%{_texmfdistdir}/tex/latex/lxfonts/omsllcmsy.fd
+%{_texmfdistdir}/tex/latex/lxfonts/omxllcmex.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ot1llcmss.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ot1llcmtt.fd
+%{_texmfdistdir}/tex/latex/lxfonts/t1llcmss.fd
+%{_texmfdistdir}/tex/latex/lxfonts/t1llcmtt.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ts1llcmss.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ulllasy.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ulmsa.fd
+%{_texmfdistdir}/tex/latex/lxfonts/ulmsb.fd
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts-demo.pdf
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts-demo.tex
 %doc %{_texmfdistdir}/doc/fonts/lxfonts/LXfonts.readme
-%doc %{_texmfdistdir}/doc/fonts/lxfonts/manifest
+%doc %{_texmfdistdir}/doc/fonts/lxfonts/README
+%doc %{_texmfdistdir}/doc/fonts/lxfonts/lxfonts.pdf
+%doc %{_texmfdistdir}/doc/fonts/lxfonts/manifest.txt
+#- source
+%doc %{_texmfdistdir}/source/fonts/lxfonts/lxfonts.dtx
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%setup -c -a0 -a1 -a2
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.4-2
-+ Revision: 753653
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.4-1
-+ Revision: 718933
-- texlive-lxfonts
-- texlive-lxfonts
-- texlive-lxfonts
-- texlive-lxfonts
-
+cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
