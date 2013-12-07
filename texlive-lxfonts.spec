@@ -6,7 +6,7 @@
 # catalog-version 2.0a
 Name:		texlive-lxfonts
 Version:	2.0a
-Release:	4
+Release:	5
 Summary:	Set of slide fonts based on CM
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lxfonts
