@@ -1,12 +1,12 @@
-# revision 31692
+# revision 32354
 # category Package
 # catalog-ctan /fonts/lxfonts
-# catalog-date 2013-09-18 16:15:50 +0200
+# catalog-date 2013-12-07 13:47:20 +0100
 # catalog-license lppl
-# catalog-version 2.0a
+# catalog-version 2.0b
 Name:		texlive-lxfonts
-Version:	2.0a
-Release:	5
+Version:	2.0b
+Release:	1
 Summary:	Set of slide fonts based on CM
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lxfonts
