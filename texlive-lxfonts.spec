@@ -1,19 +1,13 @@
-# revision 32354
-# category Package
-# catalog-ctan /fonts/lxfonts
-# catalog-date 2013-12-07 13:47:20 +0100
-# catalog-license lppl
-# catalog-version 2.0b
 Name:		texlive-lxfonts
-Version:	2.0b
-Release:	6
+Version:	32354
+Release:	1
 Summary:	Set of slide fonts based on CM
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lxfonts
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lxfonts.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ symbols and extensible delimiter fonts, as well as with the AMS
 fonts, all redone with the same stylistic parameters.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -143,7 +137,8 @@ fonts, all redone with the same stylistic parameters.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
