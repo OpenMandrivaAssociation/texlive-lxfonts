@@ -1,6 +1,6 @@
 Name:		texlive-lxfonts
 Version:	32354
-Release:	1
+Release:	2
 Summary:	Set of slide fonts based on CM
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lxfonts
